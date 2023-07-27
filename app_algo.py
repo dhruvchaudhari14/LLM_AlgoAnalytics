@@ -1,4 +1,4 @@
-import langchain.text_splitter
+import langchain
 import streamlit as st
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
