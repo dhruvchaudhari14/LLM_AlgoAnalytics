@@ -135,7 +135,7 @@ texts = text_splitter.split_documents(data)
 HUGGINGFACEHUB_API_TOKEN = "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"
 
     # Create the HuggingFaceEmbeddings and FAISS vector store
-final_embeddings = HuggingFaceEmbeddings(huggingface_api_token=HUGGINGFACEHUB_API_TOKEN)
+final_embeddings = HuggingFaceEmbeddings()
 docsearch = FAISS.from_texts(texts, final_embeddings)
 
     # Load the HuggingFace model for QA
