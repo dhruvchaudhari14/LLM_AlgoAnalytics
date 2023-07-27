@@ -137,3 +137,7 @@ docsearch = FAISS.from_documents(texts, final_embeddings)
 llm=HuggingFaceHub(repo_id="google/flan-t5-xxl",model_kwargs={"temperature": 0.4, "max_length": 500,"batch_size":32})
 retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":7})
 qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever, return_source_documents=True)
+
+
+query = "Give details about nursemaid's elbow injury "
+qa(query)
