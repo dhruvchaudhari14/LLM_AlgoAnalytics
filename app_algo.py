@@ -11,7 +11,6 @@ from langchain.chains import RetrievalQA
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain import HuggingFaceHub
-from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 
 from langchain.indexes import VectorstoreIndexCreator
