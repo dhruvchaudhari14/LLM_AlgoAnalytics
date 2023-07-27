@@ -127,12 +127,12 @@ from langchain.vectorstores import Chroma
 
 loader = TextLoader("final.txt")
 data = loader.load()
-data
+# data
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=10)
 texts = text_splitter.split_documents(data)
 
-HUGGINGFACEHUB_API_TOKEN = st.text_input("Enter your HuggingFace Hub API Token:", type="password")
+HUGGINGFACEHUB_API_TOKEN = "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"
 
     # Create the HuggingFaceEmbeddings and FAISS vector store
 final_embeddings = HuggingFaceEmbeddings(huggingface_api_token=HUGGINGFACEHUB_API_TOKEN)
