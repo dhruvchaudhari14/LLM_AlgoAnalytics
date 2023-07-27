@@ -136,7 +136,7 @@ HUGGINGFACEHUB_API_TOKEN = "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"
 
     # Create the HuggingFaceEmbeddings and FAISS vector store
 final_embeddings = HuggingFaceEmbeddings()
-docsearch = FAISS.from_texts(texts, final_embeddings)
+docsearch = FAISS.from_documents(texts, final_embeddings)
 
     # Load the HuggingFace model for QA
 llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature": 0.4, "max_length": 500, "batch_size": 32})
