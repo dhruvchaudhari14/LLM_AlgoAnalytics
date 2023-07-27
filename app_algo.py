@@ -132,15 +132,8 @@ data = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=10)
 texts = text_splitter.split_documents(data)
 
-HUGGINGFACEHUB_API_TOKEN = "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"
-
-    # Create the HuggingFaceEmbeddings and FAISS vector store
-final_embeddings = HuggingFaceEmbeddings()
+final_embeddings= HuggingFaceEmbeddings()
 docsearch = FAISS.from_documents(texts, final_embeddings)
-
-    # Load the HuggingFace model for QA
-llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature": 0.4, "max_length": 500, "batch_size": 32})
-
-    # Create the RetrievalQA chain
-retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 7})
+llm=HuggingFaceHub(repo_id="google/flan-t5-xxl",model_kwargs={"temperature": 0.4, "max_length": 500,"batch_size":32})
+retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":7})
 qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever, return_source_documents=True)
