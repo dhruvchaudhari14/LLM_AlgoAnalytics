@@ -131,7 +131,7 @@ data = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=10)
 texts = text_splitter.split_documents(data)
-
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
 final_embeddings= HuggingFaceEmbeddings()
 docsearch = FAISS.from_documents(texts, final_embeddings)
 llm=HuggingFaceHub(repo_id="google/flan-t5-xxl",model_kwargs={"temperature": 0.4, "max_length": 500,"batch_size":32})
