@@ -25,7 +25,7 @@ file_path = "data"
 
 # Step 2: Open the file in binary mode and use pickle to load the object
 with open(file_path, "rb") as file_path:
-    data = pickle.load(file)
+    data = pickle.load(file_path)
 
 
 # loader = TextLoader("/kaggle/input/qatext-processed/final.txt")
