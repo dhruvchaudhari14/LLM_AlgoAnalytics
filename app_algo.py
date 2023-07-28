@@ -21,7 +21,7 @@ from langchain.vectorstores import Chroma
 import pickle
 
 # Step 1: Define the file path where you saved the document
-file_path = "data.pkl"
+file_path = "data"
 
 # Step 2: Open the file in binary mode and use pickle to load the object
 with open(file_path, "rb") as file:
