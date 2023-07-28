@@ -24,8 +24,13 @@ import pickle
 file_path = "data"
 
 # Step 2: Open the file in binary mode and use pickle to load the object
-with open(file_path, "rb") as file:
+with open(file_path, "rb") as file_path:
     data = pickle.load(file)
+
+
+# loader = TextLoader("/kaggle/input/qatext-processed/final.txt")
+# data = loader.load()
+# data
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=10)
 texts = text_splitter.split_documents(data)
