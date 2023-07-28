@@ -125,8 +125,8 @@ from langchain.vectorstores import Chroma
 #     main()
 
 
-loader = TextLoader("final.txt")
-data = loader.load()
+# loader = TextLoader("final.txt")
+# data = loader.load()
 # data
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=10)
